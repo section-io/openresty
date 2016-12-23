@@ -28,7 +28,8 @@ fi
 #################################
 
 ver="$main_ver"
-$root/util/get-tarball "https://openresty.org/download/nginx-$ver.tar.gz" -O nginx-$ver.tar.gz || exit 1
+nginx_tar_url_prefix="${NGINX_TAR_URL_PREFIX:-https://openresty.org/download/}"
+$root/util/get-tarball "${nginx_tar_url_prefix}/nginx-$ver.tar.gz" -O nginx-$ver.tar.gz || exit 1
 tar -xzf nginx-$ver.tar.gz || exit 1
 cd nginx-$ver || exit 1
 
